@@ -74,10 +74,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="msapplication-TileColor" content="#0d1b4a" />
         <link rel="canonical" href="https://arnainfraprojects.com" />
       </head>
-      <body>
+      <body style={{ overflowX: 'hidden' }}>
         <Navbar />
         <PageTransition>
-          <main>{children}</main>
+          <main style={{ overflowX: 'clip' }}>{children}</main>
         </PageTransition>
         <Footer />
         <FloatingWhatsApp />

@@ -11,12 +11,12 @@ interface Props {
 }
 
 const transforms: Record<string, string> = {
-  up:    'translateY(48px)',
-  down:  'translateY(-48px)',
-  left:  'translateX(-48px)',
-  right: 'translateX(48px)',
+  up:    'translateY(40px)',
+  down:  'translateY(-40px)',
+  left:  'translateX(-32px)',
+  right: 'translateX(32px)',
   fade:  'none',
-  scale: 'scale(0.92)',
+  scale: 'scale(0.94)',
 };
 
 export default function ScrollReveal({
