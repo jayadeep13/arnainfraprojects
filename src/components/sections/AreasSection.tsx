@@ -1,14 +1,15 @@
 import SectionTag from '@/components/ui/SectionTag';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 import { MapPin, CheckCircle } from 'lucide-react';
 
 const areas = [
-  { name: 'Hanuman Junction', tag: 'Headquarters',      primary: true  },
-  { name: 'Vijayawada',       tag: 'Major Hub',         primary: true  },
-  { name: 'Gudivada',         tag: 'Active Service',    primary: false },
-  { name: 'Gannavaram',       tag: 'Active Service',    primary: false },
-  { name: 'Eluru',            tag: 'Active Service',    primary: false },
-  { name: 'Machilipatnam',    tag: 'Active Service',    primary: false },
-  { name: 'Krishna District', tag: 'Full Coverage',     primary: true  },
+  { name: 'Hanuman Junction', tag: 'Headquarters',       primary: true  },
+  { name: 'Vijayawada',       tag: 'Major Hub',          primary: true  },
+  { name: 'Gudivada',         tag: 'Active Service',     primary: false },
+  { name: 'Gannavaram',       tag: 'Active Service',     primary: false },
+  { name: 'Eluru',            tag: 'Active Service',     primary: false },
+  { name: 'Machilipatnam',    tag: 'Active Service',     primary: false },
+  { name: 'Krishna District', tag: 'Full Coverage',      primary: true  },
   { name: 'Andhra Pradesh',   tag: 'Pan-State Projects', primary: false },
 ];
 
@@ -16,7 +17,8 @@ export default function AreasSection() {
   return (
     <section className="section-pad bg-stone-50">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
-        <div className="flex-1">
+
+        <ScrollReveal direction="left" className="flex-1">
           <SectionTag label="Service Areas" />
           <h2 className="font-display font-bold text-navy-900 mb-4" style={{ fontSize: 'clamp(26px, 3.5vw, 44px)' }}>
             Serving Across<br />
@@ -48,17 +50,20 @@ export default function AreasSection() {
           </div>
 
           <div className="flex flex-col gap-2">
-            {['Free site visit across all service areas', 'Same quality standards everywhere we build', 'Local material sourcing for faster delivery'].map((t, i) => (
+            {[
+              'Free site visit across all service areas',
+              'Same quality standards everywhere we build',
+              'Local material sourcing for faster delivery',
+            ].map((t, i) => (
               <div key={i} className="flex items-center gap-2 text-[13px] text-slate-600 font-body">
                 <CheckCircle size={14} className="text-navy-700 flex-shrink-0" />
                 {t}
               </div>
             ))}
           </div>
-        </div>
+        </ScrollReveal>
 
-        {/* Map visual */}
-        <div className="flex-1 max-w-[420px]">
+        <ScrollReveal direction="right" delay={150} className="flex-1 max-w-[420px]">
           <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-8 flex flex-col items-center">
             <svg viewBox="0 0 360 340" xmlns="http://www.w3.org/2000/svg" className="w-full max-w-[300px]">
               <path
@@ -74,15 +79,12 @@ export default function AreasSection() {
                 strokeWidth="2"
                 strokeDasharray="6 4"
               />
-              {/* Hanuman Junction — main HQ */}
               <circle cx="165" cy="165" r="12" fill="rgba(26,47,122,0.9)" />
               <circle cx="165" cy="165" r="22" fill="rgba(26,47,122,0.15)" />
               <circle cx="165" cy="165" r="34" fill="rgba(26,47,122,0.05)" />
               <text x="180" y="162" fill="rgba(30,41,59,0.9)" fontSize="11" fontFamily="Inter,sans-serif" fontWeight="600">Hanuman Jn.</text>
-              {/* Vijayawada */}
               <circle cx="215" cy="135" r="7" fill="rgba(232,148,26,0.85)" />
               <text x="225" y="139" fill="rgba(30,41,59,0.75)" fontSize="10" fontFamily="Inter,sans-serif">Vijayawada</text>
-              {/* Others */}
               <circle cx="128" cy="150" r="5" fill="rgba(41,170,225,0.7)" />
               <text x="88" y="147" fill="rgba(30,41,59,0.6)" fontSize="9" fontFamily="Inter,sans-serif">Gudivada</text>
               <circle cx="235" cy="158" r="5" fill="rgba(41,170,225,0.6)" />
@@ -97,7 +99,8 @@ export default function AreasSection() {
               Our Primary Service Region
             </p>
           </div>
-        </div>
+        </ScrollReveal>
+
       </div>
     </section>
   );

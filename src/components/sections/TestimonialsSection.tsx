@@ -1,4 +1,5 @@
 import SectionTag from '@/components/ui/SectionTag';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 
 const testimonials = [
   {
@@ -55,40 +56,37 @@ export default function TestimonialsSection() {
   return (
     <section className="section-pad bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-14">
+        <ScrollReveal direction="up" className="text-center mb-14">
           <SectionTag label="Client Reviews" className="justify-center" />
           <h2 className="font-display font-bold text-navy-900" style={{ fontSize: 'clamp(26px, 3.5vw, 46px)' }}>
             What Our Clients<br />
             <span className="text-sky-brand">Say About Us</span>
           </h2>
-        </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
-            <div key={i} className="bg-white rounded-2xl border border-slate-100 hover:border-navy-200 hover:shadow-lg transition-all duration-300 p-7 flex flex-col">
-              {/* Stars */}
-              <div className="flex gap-0.5 mb-4">
-                {Array.from({ length: t.rating }).map((_, j) => (
-                  <span key={j} className="text-orange-brand text-[16px]">★</span>
-                ))}
-              </div>
-
-              {/* Quote */}
-              <p className="text-[13px] text-slate-600 leading-relaxed font-body flex-1 mb-6 italic">
-                &ldquo;{t.text}&rdquo;
-              </p>
-
-              {/* Author */}
-              <div className="flex items-center gap-3 pt-5 border-t border-slate-100">
-                <div className="w-11 h-11 rounded-full bg-navy-800 flex items-center justify-center font-bold text-[13px] text-white flex-shrink-0 font-display">
-                  {t.initials}
+            <ScrollReveal key={i} direction="up" delay={i * 80}>
+              <div className="bg-white rounded-2xl border border-slate-100 hover:border-navy-200 hover:shadow-lg transition-all duration-300 p-7 flex flex-col h-full">
+                <div className="flex gap-0.5 mb-4">
+                  {Array.from({ length: t.rating }).map((_, j) => (
+                    <span key={j} className="text-orange-brand text-[16px]">★</span>
+                  ))}
                 </div>
-                <div>
-                  <p className="text-[14px] font-bold text-slate-900 font-display">{t.name}</p>
-                  <p className="text-[12px] text-orange-brand font-semibold font-body">{t.role} · {t.location}</p>
+                <p className="text-[13px] text-slate-600 leading-relaxed font-body flex-1 mb-6 italic">
+                  &ldquo;{t.text}&rdquo;
+                </p>
+                <div className="flex items-center gap-3 pt-5 border-t border-slate-100">
+                  <div className="w-11 h-11 rounded-full bg-navy-800 flex items-center justify-center font-bold text-[13px] text-white flex-shrink-0 font-display">
+                    {t.initials}
+                  </div>
+                  <div>
+                    <p className="text-[14px] font-bold text-slate-900 font-display">{t.name}</p>
+                    <p className="text-[12px] text-orange-brand font-semibold font-body">{t.role} · {t.location}</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

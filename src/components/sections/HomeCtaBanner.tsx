@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 import { Phone, MessageCircle } from 'lucide-react';
 
 export default function HomeCtaBanner() {
@@ -9,7 +10,7 @@ export default function HomeCtaBanner() {
       />
       <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-sky-brand/10 blur-[120px] pointer-events-none" />
 
-      <div className="relative max-w-3xl mx-auto text-center">
+      <ScrollReveal direction="up" className="relative max-w-3xl mx-auto text-center">
         <p className="text-[11px] tracking-[3px] uppercase text-orange-brand font-bold mb-3 font-body">Get Started Today</p>
         <h2 className="font-display font-bold text-white mb-4" style={{ fontSize: 'clamp(28px, 4vw, 52px)' }}>
           Ready to Build Your<br />
@@ -41,7 +42,7 @@ export default function HomeCtaBanner() {
             <Phone size={13} /> 8897072777
           </a>
         </div>
-      </div>
+      </ScrollReveal>
     </section>
   );
 }
