@@ -43,19 +43,14 @@ export default function PageTransition({ children }: { children: React.ReactNode
           justifyContent: 'center',
           background: 'linear-gradient(135deg, #060d24 0%, #0d1b4a 50%, #1a2f7a 100%)',
           opacity: visible ? 1 : 0,
-          transform: visible ? 'scale(1)' : 'scale(1.04)',
-          transition: 'opacity 0.45s ease, transform 0.45s ease',
+          transition: 'opacity 0.45s ease',
           pointerEvents: visible ? 'all' : 'none',
+          visibility: visible ? 'visible' : 'hidden',
           gap: 0,
         }}
       >
         {/* Logo */}
-        <div
-          style={{
-            transform: visible ? 'translateY(0) scale(1)' : 'translateY(-8px) scale(0.95)',
-            transition: 'transform 0.45s ease',
-          }}
-        >
+        <div>
           <ArnaLogo size={88} />
         </div>
 

@@ -111,7 +111,8 @@ export default function Navbar() {
           background: 'linear-gradient(160deg, #0a1535 0%, #0d1b4a 60%, #101f52 100%)',
           borderLeft: '1px solid rgba(255,255,255,0.07)',
           transform: menuOpen ? 'translateX(0)' : 'translateX(100%)',
-          transition: 'transform 0.38s cubic-bezier(0.4, 0, 0.2, 1)',
+          transition: 'transform 0.38s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s linear ' + (menuOpen ? '0s' : '0.38s'),
+          visibility: menuOpen ? 'visible' : 'hidden',
           boxShadow: menuOpen ? '-12px 0 48px rgba(6,13,36,0.6)' : 'none',
         }}
       >
